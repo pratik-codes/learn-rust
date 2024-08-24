@@ -31,9 +31,9 @@ git clone https://github.com/yourusername/learn-rust.git
 cd learn-rust
 ```
 
-Ensure you have Rust installed. If not, install it using the following command:
+Ensure you have Rust installed. if you have run this project by:
 ```bash
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+cargo run
 ```
 
 ## Contributing
