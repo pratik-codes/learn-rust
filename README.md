@@ -4,18 +4,17 @@ Welcome to the **learn-rust** repository! This is your go-to resource for learni
 
 ## Table of Contents
 
-- [Introduction](#introduction)
-- [Getting Started](#getting-started)
-- [Modules](#modules)
-  - [Concepts](#concepts)
-  - [Data Types](#data-types)
-  - [Loops](#loops)
-  - [Scopes](#scopes)
-  - [Functions](#functions)
-  - [Memory Management](#memory-management)
-- [Examples](#examples)
-- [Contributing](#contributing)
-- [License](#license)
+```plaintext
+Modules
+│
+├── Concepts
+├── Data Types
+├── Loops
+├── Scopes
+├── Functions
+└── Memory Management
+  ├── basics
+```
 
 ## Introduction
 
