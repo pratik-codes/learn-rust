@@ -52,8 +52,9 @@ pub fn run () {
 // - 32bit + 32bit = 64bit would be put in the stack as a stack frame and would be deallocated when the function is done
 fn simple_memory_management() {
     // stack memory
-    let x: i32 = 5;
-    let y: i32 = 10;
+    let _x: i32 = 5;
+    let _y: i32 = 10;
+
 } 
 
 // here the first frame for multiple_functions_mm()(64 bit) would be created and then the frame for simple_memory_management()(64 bit) would be created
@@ -63,8 +64,8 @@ fn simple_memory_management() {
 // 32 bit + 32 bit = 64 bit (multiple_functions_mm())
 // when the execution happens simple_memory_management() would be popped first and then the multiple_functions_mm() 
 fn multiple_functions_mm() {
-    let x: i32 = 5;
-    let y: i32 = 10;
+    let _x: i32 = 5;
+    let _y: i32 = 10;
     simple_memory_management();
 }
 
