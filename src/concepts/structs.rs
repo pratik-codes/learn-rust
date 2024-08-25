@@ -36,21 +36,20 @@ fn struct_example() {
     );
 }
 
-
 // Implementing Structs
 // We can implement methods on structs using impl keyword.
 struct Rect {
-     width: u32,
-     height: u32,
+    width: u32,
+    height: u32,
 }
 
 impl Rect {
-     fn area(&self) -> u32 {
-          self.width * self.height
-     }
-     fn perimeter(&self) -> u32 {
-          2 * (self.width + self.height)
-     }
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+    fn perimeter(&self) -> u32 {
+        2 * (self.width + self.height)
+    }
 }
 
 fn implementing_structs() {
@@ -59,12 +58,12 @@ fn implementing_structs() {
         height: 50,
     };
 
-     println!(
-          "Implementing Structs - The area of the rectangle is: {} square pixels",
-          rect1.area()
-     ); 
-     println!(
-          "Implementing Structs - The perimeter of the rectangle is: {} pixels",
-          rect1.perimeter()
-     );
+    println!(
+        "Implementing Structs - The area of the rectangle is: {} square pixels",
+        rect1.area()
+    );
+    println!(
+        "Implementing Structs - The perimeter of the rectangle is: {} pixels",
+        rect1.perimeter()
+    );
 }
