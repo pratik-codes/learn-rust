@@ -12,8 +12,15 @@ Modules
 ├── Loops
 ├── Scopes
 ├── Functions
+├── Structs
+├── Enums
+├── Traits
+├── Error Handling
 └── Memory Management
   ├── basics
+  ├── ownership
+  ├── borrowing
+  ├── lifetimes
 ```
 
 ## Introduction
@@ -38,3 +45,7 @@ cargo run
 
 ## Contributing
 Contributions are welcome! If you have improvements, suggestions, or new examples, please feel free to submit a pull request. For major changes, please open an issue to discuss what you would like to contribute.
+
+
+## References
+https://doc.rust-lang.org/book/title-page.html
