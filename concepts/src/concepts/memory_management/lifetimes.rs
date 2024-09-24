@@ -23,7 +23,25 @@ pub fn run() {
     println!("#################################");
 
     basic_example();
+    generic_lifetime();
+    static_lifetime();
 }
+
+// Here, we’ve annotated the lifetime of r with 'a and the lifetime of x with 'b.
+// As you can see, the inner 'b block is much smaller than the outer 'a lifetime block. At compile time,
+// Rust compares the size of the two lifetimes and sees that r has a lifetime of 'a but that it refers to memory with a lifetime of 'b.
+// The program is rejected because 'b is shorter than 'a: the subject of the reference doesn’t live as long as the reference.
+// And this avoids dangling pointers and memory leaks
+// fn basic_example0() {
+//     let r;                // ---------+-- 'a
+//                           //          |
+//     {                     //          |
+//         let x = 5;        // -+-- 'b  |
+//         r = &x;           //  |       |
+//     }                     // -+       |
+//                           //          |
+//     println!("r: {r}");   //          |
+// }
 
 fn basic_example() {
     let my_string: String = String::from("Hello, world!");
@@ -58,9 +76,26 @@ fn push_string<'a>(str_vec: &mut Vec<&'a String>, my_string: &'a String) {
     str_vec.push(my_string);
 }
 
-//TODO: concepts which are not covered yet and are in progress:
-// Lifetime annottations in Structs
-// Lifetime elision
-// Lifetime annotations in methods definitions
-// The Static Lifetime
-// Generic Type Parameters, Trait Bounds, and Lifetimes Together
+fn generic_lifetime() {
+    let string1 = String::from("abcd");
+    let string2 = "xyz";
+    let result = longest(string1.as_str(), string2);
+    println!("The longest string is {}", result);
+}
+
+// utils function to find the longest string
+fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
+    if x.len() > y.len() {
+        x
+    } else {
+        y
+    }
+}
+
+// In this case the lifetime of s would be as long as the program run because it has a static lifetime
+// and is stored in the read only memory
+// before anotating any variable as static make sure it lives for the entire program
+fn static_lifetime() {
+    let s: &'static str = "I have a static lifetime";
+    println!("s: {}", s); // prints "I have a static lifetime
+}

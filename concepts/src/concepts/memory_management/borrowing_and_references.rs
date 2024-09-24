@@ -6,7 +6,6 @@
 // - The reference is also valid only till the scope of the function it is passed to.
 // - you can send a mutable reference to someone aswell without transferring the ownership of the value. But the mutable reference can be only one at a time.
 
-
 // Why does rust do this?
 // - Rust’s design has been shaped by a few key goals:
 // - - Safety: Rust is designed to be safe, and references are one of its key safety features.

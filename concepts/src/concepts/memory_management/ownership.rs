@@ -33,6 +33,7 @@ fn heap_ownership_example() {
     let s1 = String::from("hello");
     print!("Heap Ownership Example - s1: {}", s1); // this works here because the ownership of s1 is not transferred to s2
     let s2 = s1;
+
     // println!("Heap Ownership Example - s1: {}", s1); // this will give an error because s1 is no longer valid
     println!("Ownership Example - s2: {}", s2);
 
@@ -43,18 +44,17 @@ fn heap_ownership_example() {
 
 // there are two ways to do this
 fn return_ownership() {
-     let mut s1 = String::from("hello");
-     // either create a new variable and take ownership there 
-     let s2: String = take_ownership(s1); 
+    let mut s1 = String::from("hello");
+    // either create a new variable and take ownership there
+    let s2: String = take_ownership(s1);
 
-     // or take ownership from the function back and assign it to the same variable by making it a mutable variable. 
-     s1 = take_ownership(s2);
+    // or take ownership from the function back and assign it to the same variable by making it a mutable variable.
+    s1 = take_ownership(s2);
 
-     // or you can also use reference which would be in borrow and refernce file
+    // or you can also use reference which would be in borrow and refernce file
 
-     println!("Ownership return Example - s1: {}", s1);
+    println!("Ownership return Example - s1: {}", s1);
 }
-
 
 // utility that takes the ownership of the string and returns it back if needed.
 fn take_ownership(s: String) -> String {

@@ -20,4 +20,5 @@ fn main() {
     concepts::option::run();
     concepts::generics::run();
     concepts::traits::run();
+    concepts::box_smart_pointer::run();
 }

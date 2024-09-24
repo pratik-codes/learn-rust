@@ -1,0 +1,3 @@
+This is a demo text
+
+Now we’ll add functionality to read the file specified in the file_path argument. First, we need a sample file to test it with: we’ll use a file with a small amount of text over multiple lines with some repeated words. Listing 12-3 has an Emily Dickinson poem that will work well! Create a file called poem.txt at the root level of your project, and enter the poem “I’m Nobody! Who are you?”
