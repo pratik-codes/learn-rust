@@ -19,8 +19,8 @@ fn main() {
             }
         },
     };
-
     let matched_searches = utils::search_string(&config.query, &file_content);
+
     println!("Searching for {}", config.query);
     println!("#############################################");
     println!("In file {}", config.file_path);

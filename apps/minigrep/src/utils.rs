@@ -35,7 +35,11 @@ pub fn read_file_content(file_path: &String) -> Result<String, Error> {
     }
 }
 
-pub fn search_string<'a>(query: &str, content: &'a str) -> Vec<&'a str> {
+pub fn search_string<'a>(query: &str, content: &'a str) -> Result<Vec<&'a str>, &'static str> {
+    if content == "" {
+        return Err("empty content");
+    }
+
     let mut results = Vec::new();
 
     for line in content.lines() {
@@ -44,5 +48,5 @@ pub fn search_string<'a>(query: &str, content: &'a str) -> Vec<&'a str> {
         }
     }
 
-    results
+    Ok(results)
 }
