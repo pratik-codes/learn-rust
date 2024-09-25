@@ -34,3 +34,15 @@ pub fn read_file_content(file_path: &String) -> Result<String, Error> {
         Err(err) => Err(err), // Propagate the error
     }
 }
+
+pub fn search_string<'a>(query: &str, content: &'a str) -> Vec<&'a str> {
+    let mut results = Vec::new();
+
+    for line in content.lines() {
+        if line.contains(query) {
+            results.push(line);
+        }
+    }
+
+    results
+}
