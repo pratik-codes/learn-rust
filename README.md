@@ -6,6 +6,8 @@ Welcome to the **learn-rust** repository! This is your go-to resource for learni
 
 ```plaintext
 Modules
+└── Apps
+  ├── Minigrep
 │
 ├── Concepts
 ├── Data Types
