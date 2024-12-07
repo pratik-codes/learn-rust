@@ -40,6 +40,5 @@ fn bubble_sort_inplace(data: &mut [i32]) {
         }
         n = new_n; // Reduce the range to the last unsorted element
     }
-
-    println!("Inplace bubble sorted data: {:?}", data);
 }
+println!("Inplace bubble sorted data: {:?}", data);
